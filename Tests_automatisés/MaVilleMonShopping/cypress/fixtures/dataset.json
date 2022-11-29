@@ -4,5 +4,11 @@
   "Phone": "0633833782",
   "Email": "testautocypress33@gmail.com",
   "Password": "Test123+",
-  "PasswordConfirmation": "Test123+"
+  "PasswordConfirmation": "Test123+",
+  "Product": "Jambon",
+  "Article1": "3 jambon",
+  "TotalPriceAdd" : "27,00 €",
+  "TotalPriceReduce" : "13,50 €",
+  "UnitPrice" : "13,50 €"
+
 }

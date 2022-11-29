@@ -6,8 +6,19 @@ export class HomePage {
 
     CustomerOrSellerDropDownMenu : () => cy.contains('.d-none > .d-flex > .m-0','Client ou Vendeur'),
 
-    SignUpOption : () => cy.get('[data-cy="link-signup-customer"]'),       
+    SignUpOption : () => cy.get('[data-cy="link-signup-customer"]'),
     
+    ConnectOption : () => cy.contains('.dropdown-menu > :nth-child(1) > .blue-navy','Se connecter'),
+
+    CreateShopOption : () => cy.get('[data-cy="link-signup-shop"]'),
+
+    ConfirmAlertAccount : () => cy.get('[class="flex-fill"]').contains('Bienvenue, vous êtes connecté.'),
+
+    CustomerDropDownMenu : () => cy.contains('.d-none > .d-flex > .m-0','Mon compte'),
+
+    SearchBarField: () => cy.get('#q'),
+    
+    MagnifyingGlassIcon: () => cy.get('[data-cy="btn-search"] > .icons8')
 
     }
 
@@ -15,10 +26,24 @@ export class HomePage {
 
     navigateToSubscribePage() {
         this.elements.CustomerOrSellerDropDownMenu().click()
+        this.elements.SignUpOption().should('be.visible')
+        this.elements.ConnectOption().should('be.visible')
+        this.elements.CreateShopOption().should('be.visible')
         this.elements.SignUpOption().click()
-        cy.contains('.mt-10 > .col-12 > .mb-4','Créer mon compte').should('be.visible')
+        cy.contains('.mt-10 > .col-12 > .mb-4','Créer mon compte').should('be.visible',{ timeout: 10000 })
     }
 
+    navigateToAccountPage() {
+        this.elements.CustomerDropDownMenu().click({force: true},{ timeout: 10000 })
+    }
 
+    // méthode pour rechercher des articles sur le site à l'aide de la barre de recherche
+
+    TypeProduct(Product) {
+       return this.elements.SearchBarField().should('be.visible').click({force: true}).type(Product,{force: true})
+    }
+    NavigateToProductResultPage() {
+       this.elements.MagnifyingGlassIcon().should('be.visible').click({force: true})
+    }
 
 }

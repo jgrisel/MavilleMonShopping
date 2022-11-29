@@ -1,30 +1,40 @@
 export class ShoppingCartPage {
 
+    // liste des éléments composant la page du panier de commande du site à utiliser pour les tests
+
     elements ={
 
+    TitleCartPage : () => cy.get('#details-cart-upper-part'),
 
-    QuantityField : () => cy.xpath('//input[@name="EST-3"]'),
+    VerifyProduct : () => cy.get('[data-cy="product-name"] > a'),
 
-    UpdateCartBttn : () => cy.xpath('//input[@name="updateCartQuantities"]'),
+    AddQuantityBtn : () => cy.get('button[data-cy="btn-quantity-more"]'),
 
-    TotalCostField : () => cy.xpath('//*[@id="Cart"]/form/table/tbody/tr[2]/td[7]'),
+    ReduceQuantityBtn : () => cy.get('button[data-cy="btn-quantity-less"]'),
 
-    ListCostField : () => cy.xpath('//*[@id="Cart"]/form/table/tbody/tr[2]/td[6]')
+    TotalCostField : () => cy.get('*[id^="total-price-pgh"]'),
+
+    UnitCostField : () => cy.get('#unit-price > p'),
+
+    DeleteProductBtn: () => cy.get('.delete-product-cart'),
+
+    NumberArticle: () => cy.get('#cart-product-cnt')
 
     }
 
-    ChangeQuantity() {
-        globalThis.Quantity = 2
-        this.elements.QuantityField().click().clear().type(Quantity)
-        this.elements.UpdateCartBttn().click()
+    // méthode pour modifier, supprimer la quantité de l'article ajouté
+
+    AddQuantity() {
+        this.elements.AddQuantityBtn().should('be.visible').click({timeout: 10000})
     }
 
-    VerifyPrice() {
-        var TotalCost = this.elements.TotalCostField().invoke('text').then(cy.log).invoke('replace', '$', '').then(cy.log).then(parseFloat).should('be.a', 'number')
-        var ListCost = this.elements.ListCostField().invoke('text').invoke('replace', '$', '').then(cy.log).then(parseFloat).should('be.a', 'number')
-       expect(TotalCost / ListCost)==Quantity
+    ReduceQuantity() {
+        this.elements.ReduceQuantityBtn().should('be.visible').click()
     }
 
+    DeleteArticle() {
+        this.elements.DeleteProductBtn().should('be.visible').click()
+    }
     
-    }
+}
 
