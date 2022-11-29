@@ -25,5 +25,4 @@ Le dossier "support"  contient les fichiers permettant d'ajouter des méthodes r
   -commands
   -e2e
   
-  
 Le fichier cypress.json contient la configuration de cypress pour le projet.
