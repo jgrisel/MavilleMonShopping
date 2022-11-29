@@ -1,0 +1,15 @@
+Prérequis :
+Test effectué sur Cypress version 10.4.0 et sur le navigateur CHROME
+
+Ce dossier contient des fichiers de test robot du SUT https://petstore.octoperf.com/actions/Order.action?newOrderForm= sur 3 navigateurs différents : webkit, firefox, chrome.
+Les tests à exécuter se trouvent dans le dossier test.
+Chaque cas de test vérifie un type d'action utilisateur du site https://petstore.octoperf.com/actions/Order.action?newOrderForm=.
+Pour qu'un test soit en succès, il faut insérer dans Squash TM les jeux de données suivants :
+Nom                         Browser         password            username
+chrome test non passant     chromium        gre                 gte5948@+
+Chrome test passant         chromium        j2ee                j2ee
+Firefox test non passant    firefox         thkkfjyhtgrf        hjukilmp186588
+Firefox test passant        firefox         j2ee                j2ee
+Webkit test non passant     webkit          fgrthyjuhgf         fgtyhujiklçiolu84/*96
+Webkit test passant         webkit          j2ee                j2ee
+Trois cas de tests sont présents avec des valeurs passantes et non passantes.
