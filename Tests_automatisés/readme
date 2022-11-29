@@ -21,6 +21,9 @@ Le dossier "page-objects" contient les fichiers des différentes pages object cr
   -ShoppingCartPage
   -SubscribePage
 
-Le dossier "support" contient les fichiers de configuration de cypress pour les tests :
+Le dossier "support"  contient les fichiers permettant d'ajouter des méthodes réutilisables ou des fonctions globales essentielles à utiliser sur tous les autres fichiers de spécifications.
   -commands
   -e2e
+  
+  
+Le fichier cypress.json contient la configuration de cypress pour le projet.
