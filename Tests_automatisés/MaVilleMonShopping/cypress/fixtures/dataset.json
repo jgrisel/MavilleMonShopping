@@ -9,6 +9,7 @@
   "Article1": "3 jambon",
   "TotalPriceAdd" : "27,00 €",
   "TotalPriceReduce" : "13,50 €",
-  "UnitPrice" : "13,50 €"
+  "UnitPrice" : "13,50 €",
+  "EmailForDelivery": "grisel.jules@gmail.com"
 
 }

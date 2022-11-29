@@ -45,6 +45,9 @@ describe('Customer Account registration', function ()  {
 //Après le test,  la fonction suivante modifie l'adresse mail du compte (random) afin de pouvoir ré-utiliser le test
 
   after(function() {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+      return false
+  })
     homePage.navigateToAccountPage()
     accountPage.elements.AccountCustomerName().should('have.text',this.testdata.Surname)
     accountPage.elements.InformationsTab().should('be.visible')

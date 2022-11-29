@@ -18,7 +18,11 @@ export class HomePage {
 
     SearchBarField: () => cy.get('#q'),
     
-    MagnifyingGlassIcon: () => cy.get('[data-cy="btn-search"] > .icons8')
+    MagnifyingGlassIcon: () => cy.get('[data-cy="btn-search"] > .icons8'),
+
+    AccountDropDownMenu: () => cy.get('#dropdown-nav-account > .align-items-center > .icons8-male-user'),
+
+    DeconnectOption : () => cy.get('[type="submit"]').contains('Se déconnecter')
 
     }
 
@@ -45,5 +49,13 @@ export class HomePage {
     NavigateToProductResultPage() {
        this.elements.MagnifyingGlassIcon().should('be.visible').click({force: true})
     }
+
+    // méthode pour se déconnecter du compte client
+
+    DeconnectCustomer() {
+        this.elements.AccountDropDownMenu().should('be.visible').trigger('mouseover')
+        this.elements.DeconnectOption().click({force: true})
+     }
+
 
 }
