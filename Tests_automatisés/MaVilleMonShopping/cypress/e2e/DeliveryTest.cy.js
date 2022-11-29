@@ -55,7 +55,7 @@ describe('Search,Add, modify and delete product', function ()  {
     cy.contains('#axeptio_btn_acceptAll', 'Tout accepter').click()
     shoppingCartPage.EnterPasswordAccount(this.testdata.Password)
     shoppingCartPage.NavigateToDeliveryPage()
-    deliveryPage.elements.TitleDeliveryPage().should('contain', 'Livraison de mes achats')
+    deliveryPage.elements.TitleDeliveryPage().invoke('text').should('contain', 'Livraison de mes achats')
     deliveryPage.ChooseClickAndCollect()
     deliveryPage.elements.ClickAndCollectLastName().should('be.visible')
    })

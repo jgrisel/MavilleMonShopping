@@ -4,7 +4,7 @@ export class ProductResultPage {
 
     elements ={
 
-    SearchConfirmProduct : () => cy.get('h1 > .orange'),
+    SearchConfirmProduct : () => cy.get('h1 > .orange',{ timeout: 20000 }),
 
     Article1: () => cy.get('a[href*="/3-jambon"]')
     }
