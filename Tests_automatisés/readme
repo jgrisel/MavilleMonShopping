@@ -26,6 +26,6 @@ Le dossier "support"  contient les fichiers permettant d'ajouter des méthodes r
   -e2e
 
 Le dossier "video" qui contient une vidéo de l'éxecution des tests automatisés cypress sur chrome :
-  -video_execution_tests
+  -video_execution_tests_auto
   
 Le fichier cypress.json contient la configuration de cypress pour le projet.
