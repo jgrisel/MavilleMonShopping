@@ -24,5 +24,8 @@ Le dossier "page-objects" contient les fichiers des différentes pages object cr
 Le dossier "support"  contient les fichiers permettant d'ajouter des méthodes réutilisables ou des fonctions globales essentielles à utiliser sur tous les autres fichiers de spécifications.
   -commands
   -e2e
+
+Le dossier "video" qui contient une vidéo de l'éxecution des tests automatisés cypress sur chrome :
+  -video_execution_tests
   
 Le fichier cypress.json contient la configuration de cypress pour le projet.
